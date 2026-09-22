@@ -503,8 +503,8 @@ a.row:hover .arr{transform:translateX(8px)}
 
 .gingham>.stk{z-index:2}.gingham .inner{z-index:1}
 body{background:repeating-linear-gradient(90deg,rgba(214,170,60,.07) 0 22px,transparent 22px 44px),repeating-linear-gradient(0deg,rgba(214,170,60,.07) 0 22px,transparent 22px 44px),var(--paper)}
-.logo.hero-logo{display:block;width:100%;max-width:560px;color:var(--butter);margin:4px 0 6px}.page[data-page=home] .split.wide .panel.olive{min-width:0}.page[data-page=home] .split.wide .panel.olive .head{width:100%;min-width:0}
-.lbl-stk{display:block;filter:drop-shadow(4px 6px 0 rgba(67,8,16,.22));pointer-events:none;z-index:3}.page[data-page=home] .split.wide .panel.olive .head{display:grid;justify-items:start;gap:6px}
+.logo.hero-logo{display:block;width:100%;max-width:680px;color:var(--butter);margin:4px 0 6px}.page[data-page=home] .split.wide .panel.olive{min-width:0}.page[data-page=home] .split.wide .panel.olive .head{width:100%;min-width:0}
+.lbl-stk{display:block;filter:drop-shadow(4px 6px 0 rgba(67,8,16,.22));pointer-events:none;z-index:3}.page[data-page=home] .split.wide .panel.olive .head{display:grid;grid-template-columns:minmax(0,1fr);justify-items:start;gap:6px}
 .striped{background:var(--butter)}
 .split .panel.gingham-panel{background:var(--butter);padding:0}.gingham-panel .inner{border:0;border-radius:var(--r);background:var(--butter);padding:48px}
 .cta.pattern-cta{background:var(--butter)}.cta.pattern-cta .ctacard{border:0}
@@ -612,6 +612,13 @@ main.wrap,footer{overflow-x:clip}
   .hero-logo{max-width:100%}
   .gingham{padding:40px 18px}.gingham .inner{padding:36px 20px}.gingham h2.mission{font-size:22px;max-width:none}
   .gingham .corner,.gingham>.stk{display:none}
+}
+
+/* ===== hero fits the screen ===== */
+@media(min-width:1101px){
+  .page[data-page=home] .split.wide .panel{height:calc(100vh - 118px);min-height:680px;max-height:820px}
+  .page[data-page=home] .split.wide .panel.photo .lbl-stk{width:min(240px,34%)!important}
+  .page[data-page=home] .split.wide .panel.photo>img:first-child{position:absolute;inset:0;height:100%}
 }
 
 /* ===== phone round 2 ===== */

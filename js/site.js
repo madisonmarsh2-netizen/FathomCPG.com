@@ -15,7 +15,7 @@
   }
   window.addEventListener('resize',fitNav);
   burger.addEventListener('click',function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
-  fitNav();
+  fitNav();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitNav);window.addEventListener('load',fitNav);
 
   var form=document.getElementById('intake');
   if(form){
