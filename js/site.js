@@ -27,10 +27,20 @@
     if(window.innerWidth<=1100)return;
     lines.forEach(function(l){l.style.whiteSpace='nowrap'});
     var target=h2.getBoundingClientRect().width;
-    var widths=lines.map(function(l){return l.getBoundingClientRect().width});
-    lines.forEach(function(l,i){
-      var base=parseFloat(getComputedStyle(l).fontSize);
-      l.style.fontSize=(base*target/widths[i])+'px';
+    var groups={};
+    lines.forEach(function(l){
+      var key=l.closest('em')?'em':'plain';
+      (groups[key]=groups[key]||[]).push(l);
+    });
+    Object.keys(groups).forEach(function(key){
+      var groupLines=groups[key];
+      var sizes=groupLines.map(function(l){
+        var base=parseFloat(getComputedStyle(l).fontSize);
+        var w=l.getBoundingClientRect().width;
+        return base*target/w;
+      });
+      var minSize=Math.min.apply(null,sizes);
+      groupLines.forEach(function(l){l.style.fontSize=minSize+'px'});
     });
     h2.style.width=target+'px';
   }
