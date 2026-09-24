@@ -248,7 +248,7 @@ section{margin-bottom:28px}
 
 /* CENTERED STATEMENT */
 .statement{padding:56px 24px;text-align:center;display:grid;justify-items:center;gap:28px}
-.statement h2{font-size:clamp(34px,3.8vw,60px);line-height:1.05;max-width:20ch}
+.statement h2{font-size:clamp(28px,3.2vw,52px);line-height:1.1;max-width:34ch}
 .statement h2 em{font-style:italic;color:var(--blue)}
 .statement p{max-width:58ch;font-size:20px}
 
@@ -615,7 +615,7 @@ main.wrap,footer{overflow-x:clip}
   .foot{padding:44px 20px 28px}
   .datart{min-height:0}
   .checker{padding:14px}
-  .intro h2,.statement h2{font-size:30px}
+  .intro h2,.statement h2{font-size:26px}
   .sec-head h2{font-size:38px}
   .goodthings{padding:32px 22px}
   .formwrap{padding:10px}
