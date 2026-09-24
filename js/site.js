@@ -26,8 +26,8 @@
     h2.style.width='';
     if(window.innerWidth<=1100)return;
     lines.forEach(function(l){l.style.whiteSpace='nowrap'});
+    var target=h2.getBoundingClientRect().width;
     var widths=lines.map(function(l){return l.getBoundingClientRect().width});
-    var target=Math.max.apply(null,widths);
     lines.forEach(function(l,i){
       var base=parseFloat(getComputedStyle(l).fontSize);
       l.style.fontSize=(base*target/widths[i])+'px';
