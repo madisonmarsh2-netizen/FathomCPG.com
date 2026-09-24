@@ -628,7 +628,7 @@ main.wrap,footer{overflow-x:clip}
 
 /* ===== hero fits the screen ===== */
 @media(min-width:1101px){
-  .page[data-page=home] .split.wide .panel{height:calc(100vh - 118px);min-height:680px;max-height:820px}
+  .page[data-page=home] .split.wide .panel{min-height:calc(100vh - 118px);max-height:820px}
   .page[data-page=home] .split.wide .panel.photo .lbl-stk{width:min(240px,34%)!important}
   .page[data-page=home] .split.wide .panel.photo>img:first-child{position:absolute;inset:0;height:100%}
 }
