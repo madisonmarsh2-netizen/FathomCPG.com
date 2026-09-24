@@ -646,3 +646,23 @@ main.wrap,footer{overflow-x:clip}
   .formwrap{grid-template-columns:1fr}
   .top{padding:10px var(--g)}
 }
+
+/* ===== Why fractional: asymmetric split (restructure only) ===== */
+.wf-grid{display:grid;grid-template-columns:380px 1fr;gap:56px;align-items:center;text-align:left;width:100%}
+.wf-left{display:grid;gap:16px;align-content:center}
+.wf-left h2{margin:0}
+.wf-right{display:grid;gap:24px}
+.wf-right>p{font-size:20px;margin:0}
+.wf-callout{background:var(--wine);color:var(--butter);border-radius:var(--r);padding:26px 30px;transition:transform .25s cubic-bezier(.22,1,.36,1)}
+.wf-callout p{font-size:19px;margin:0}
+.wf-callout:hover{transform:translateY(-2px)}
+@media(max-width:1100px){.wf-grid{grid-template-columns:1fr;gap:32px}}
+
+/* load-in fade/slide, scoped to the Why fractional section for now */
+@keyframes wf-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.animate-in{opacity:0;animation:wf-in .9s cubic-bezier(.22,1,.36,1) both}
+.wf-a1{animation-delay:0s}
+.wf-a2{animation-delay:.12s}
+.wf-a3{animation-delay:.22s}
+.wf-a4{animation-delay:.35s}
+@media(prefers-reduced-motion:reduce){.animate-in{animation:none;opacity:1}}
