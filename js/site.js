@@ -22,9 +22,10 @@
     if(!h2)return;
     var lines=[].slice.call(h2.querySelectorAll('.fit-line'));
     if(!lines.length)return;
-    lines.forEach(function(l){l.style.fontSize=''});
+    lines.forEach(function(l){l.style.fontSize='';l.style.whiteSpace=''});
     h2.style.width='';
     if(window.innerWidth<=1100)return;
+    lines.forEach(function(l){l.style.whiteSpace='nowrap'});
     var widths=lines.map(function(l){return l.getBoundingClientRect().width});
     var target=Math.max.apply(null,widths);
     lines.forEach(function(l,i){
