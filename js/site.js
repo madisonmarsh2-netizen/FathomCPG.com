@@ -17,6 +17,28 @@
   burger.addEventListener('click',function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
   fitNav();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitNav);window.addEventListener('load',fitNav);
 
+  function fitHeadingLines(){
+    var h2=document.querySelector('.fit-heading');
+    if(!h2)return;
+    var lines=[].slice.call(h2.querySelectorAll('.fit-line'));
+    if(!lines.length)return;
+    lines.forEach(function(l){l.style.fontSize=''});
+    h2.style.width='';
+    if(window.innerWidth<=1100)return;
+    var widths=lines.map(function(l){return l.getBoundingClientRect().width});
+    var target=Math.max.apply(null,widths);
+    lines.forEach(function(l,i){
+      var base=parseFloat(getComputedStyle(l).fontSize);
+      l.style.fontSize=(base*target/widths[i])+'px';
+    });
+    h2.style.width=target+'px';
+  }
+  fitHeadingLines();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitHeadingLines);
+  window.addEventListener('load',fitHeadingLines);
+  var _fitTO;
+  window.addEventListener('resize',function(){clearTimeout(_fitTO);_fitTO=setTimeout(fitHeadingLines,150)});
+
   var form=document.getElementById('intake');
   if(form){
   var steps=[].slice.call(form.querySelectorAll('.fstep')),prog=[].slice.call(document.querySelectorAll('#prog a'));

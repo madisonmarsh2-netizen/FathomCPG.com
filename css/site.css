@@ -666,3 +666,10 @@ main.wrap,footer{overflow-x:clip}
 .wf-a3{animation-delay:.22s}
 .wf-a4{animation-delay:.35s}
 @media(prefers-reduced-motion:reduce){.animate-in{animation:none;opacity:1}}
+
+/* ===== size-justified heading lines (Home statement) ===== */
+.fit-br{display:none}
+@media(min-width:1101px){
+  .fit-br{display:inline}
+  .fit-heading{width:max-content;max-width:920px}
+}
