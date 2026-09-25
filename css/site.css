@@ -579,7 +579,7 @@ body{background:repeating-linear-gradient(90deg,rgba(214,170,60,.07) 0 22px,tran
 .page[data-page=services] .hero-panel .art{display:none}
 .page[data-page=services] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:100px;transform:rotate(15deg)}
 .page[data-page=method] .hero-panel{position:relative}
-.page[data-page=method] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:59px;transform:rotate(15deg);filter:drop-shadow(4px 5px 0 rgba(67,8,16,.3))}
+.page[data-page=method] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:62px;transform:rotate(15deg);filter:drop-shadow(4px 5px 0 rgba(67,8,16,.3))}
 .page[data-page=stories] .hero-panel{grid-template-columns:1fr;position:relative}
 .page[data-page=stories] .hero-panel .art{display:none}
 .page[data-page=stories] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:81px;transform:rotate(15deg)}
