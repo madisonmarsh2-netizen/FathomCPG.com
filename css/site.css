@@ -391,7 +391,7 @@ a.row:hover .arr{transform:translateX(8px)}
 .timeline .cols p{font-size:17.5px;line-height:1.55}
 
 /* FOOTER */
-.foot{border-radius:0;background:var(--olive);color:var(--butter);padding:56px 48px 36px;display:grid;gap:48px}
+.foot{border-radius:var(--r) var(--r) 0 0;background:var(--olive);color:var(--butter);padding:56px 48px 36px;display:grid;gap:48px}
 .foot-top{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end}
 .foot .logo{width:100%;max-width:900px;color:var(--butter)}
 .foot-top .line{font-size:clamp(28px,3vw,46px);line-height:1.05;color:var(--cream)}
@@ -703,6 +703,13 @@ main.wrap,footer{overflow-x:clip}
 .wf-callout{background:var(--wine);color:var(--butter);border-radius:32px;padding:20px 40px;margin:14px;transition:transform .25s cubic-bezier(.22,1,.36,1)}
 .wf-callout p{font-size:19px;margin:0}
 .wf-callout:hover{transform:translateY(-2px)}
+@media(min-width:1024px){
+  /* align the callout's left edge with the paragraph above it (both are children of
+     .wf-right, a stretch-default grid); margin-left was shifting+shrinking it via grid
+     stretch, so width is locked to its current computed value (640px track - 14px - 14px
+     margins) before removing the left margin, so the box size is unchanged, only its position */
+  .wf-callout{width:612px;margin-left:0}
+}
 @media(max-width:1100px){.wf-grid{grid-template-columns:1fr;gap:32px}.whyfull .panel{padding:64px 32px}}
 @media(max-width:640px){
   .whyfull .panel{padding:44px 22px}
