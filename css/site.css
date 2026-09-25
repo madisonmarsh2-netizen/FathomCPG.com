@@ -738,7 +738,7 @@ main.wrap,footer{overflow-x:clip}
   .cta h2{font-size:clamp(28px,9vw,40px)}
   .cta p{font-size:16px}
   .cta.pattern-cta{padding:48px 20px}
-  .cta.pattern-cta .ctacard{padding:30px 24px;gap:12px}
+  .cta.pattern-cta .ctacard{padding:30px 24px;gap:12px;background:none;border:0;box-shadow:none}
   .mcta{padding:48px 20px}
   .mcta .ctacard{padding:30px 24px;gap:12px}
 }
