@@ -114,20 +114,26 @@ section{margin-bottom:28px}
 .gingham h2.mission{font-size:clamp(26px,2.9vw,46px);max-width:30ch;line-height:1.35}
 .gingham .mission-sub{font-size:19px;line-height:1.5;max-width:48ch;font-weight:400}
 .checker{border-radius:var(--r);padding:18px;position:relative;background:var(--butter);overflow:hidden}
-.checker .inner{position:relative;z-index:1}
+.checker::before{content:"";position:absolute;inset:0;background:
+ repeating-linear-gradient(90deg,var(--tomato) 0 18px,var(--butter) 18px 36px) top/100% 18px no-repeat,
+ repeating-linear-gradient(90deg,var(--tomato) 0 18px,var(--butter) 18px 36px) bottom/100% 18px no-repeat,
+ repeating-linear-gradient(0deg,var(--tomato) 0 18px,var(--butter) 18px 36px) left/18px 100% no-repeat,
+ repeating-linear-gradient(0deg,var(--tomato) 0 18px,var(--butter) 18px 36px) right/18px 100% no-repeat;pointer-events:none}
+.checker .inner{position:relative}
 .checker .inner{background:var(--paper);border-radius:calc(var(--r) - 8px);padding:72px 48px;text-align:center;display:grid;justify-items:center;gap:24px;color:var(--wine)}
 .checker h2{font-size:clamp(38px,4.6vw,72px);line-height:1;max-width:16ch}
 .checker p{max-width:46ch;font-size:20px}
 
-/* ticket-stripe border, reused on the home closing CTA and the stories "Founding clients" CTA.
-   An SVG rounded-rect stroke with stroke-dasharray, not layered repeating-linear-gradient bands:
-   gradients paint each edge as an independent flat strip, so at each corner two strips overlap
-   and one flatly wins, rendering a solid square instead of the dash continuing around the curve.
-   A single stroked path measures arc-length continuously, so the dash rhythm bends with the
-   corner naturally. The rect's own fill/stroke gap show the card's --butter background beneath. */
-.checker,.ticket-cta{border-radius:var(--r);position:relative;overflow:hidden}
-.ticket-stripe{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
-.ticket-stripe rect{x:9px;y:9px;width:calc(100% - 18px);height:calc(100% - 18px);rx:calc(var(--r) - 9px);fill:none;stroke:var(--tomato);stroke-width:18px;stroke-dasharray:18 18}
+/* ticket-stripe border, reused on the home closing CTA — SAME technique as .checker above
+   (layered repeating-linear-gradient bands on a ::before, clipped by overflow:hidden +
+   border-radius on the parent) rather than border-image, so corners come out rounded and the
+   stripe keeps running the same rhythm all the way around instead of a fixed solid corner tile */
+.ticket-cta{border-radius:var(--r);position:relative;overflow:hidden}
+.ticket-cta::before{content:"";position:absolute;inset:0;background:
+ repeating-linear-gradient(90deg,var(--tomato) 0 18px,var(--butter) 18px 36px) top/100% 18px no-repeat,
+ repeating-linear-gradient(90deg,var(--tomato) 0 18px,var(--butter) 18px 36px) bottom/100% 18px no-repeat,
+ repeating-linear-gradient(0deg,var(--tomato) 0 18px,var(--butter) 18px 36px) left/18px 100% no-repeat,
+ repeating-linear-gradient(0deg,var(--tomato) 0 18px,var(--butter) 18px 36px) right/18px 100% no-repeat;pointer-events:none}
 .ticket-cta>*{position:relative;z-index:1}
 
 /* BRAND PATTERNS */
