@@ -105,7 +105,7 @@ section{margin-bottom:28px}
 
 /* PATTERN SECTIONS */
 .gingham{border-radius:var(--r);color:var(--wine);position:relative}
-.gingham .inner{position:relative;max-width:1100px;margin:auto;display:grid;gap:20px;justify-items:center;text-align:center;background:var(--paper);border:2px solid var(--line);border-radius:var(--r);padding:56px 48px}
+.gingham .inner{position:relative;max-width:1100px;margin:auto;display:grid;gap:20px;justify-items:center;text-align:center;background:var(--butter);border:2px solid var(--line);border-radius:var(--r);padding:56px 48px}
 .gingham h2{font-size:clamp(38px,4.4vw,70px);line-height:1}
 .gingham h2.mission{font-size:clamp(26px,2.9vw,46px);max-width:30ch;line-height:1.35}
 .gingham .mission-sub{font-size:19px;line-height:1.5;max-width:48ch;font-weight:400}
@@ -536,6 +536,7 @@ body{background:repeating-linear-gradient(90deg,rgba(214,170,60,.07) 0 22px,tran
 .pola img{display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:top;filter:grayscale(1)}
 .tape{position:absolute;width:110px;height:26px;background:rgba(242,232,147,.85);transform:rotate(-8deg);box-shadow:0 1px 2px rgba(0,0,0,.1);z-index:2}
 .acopy{position:relative;display:grid;gap:22px;justify-items:start}.acopy h1{font-size:clamp(52px,6.4vw,104px);line-height:.92}.acopy p{font-size:19px;max-width:48ch}
+.acopy-photo{display:none}
 .ast{position:absolute;display:block}
 /* about story photo */
 .split .panel.photoband{padding:0;background-size:cover;background-position:center;min-height:520px;display:grid;place-items:center}
@@ -566,7 +567,7 @@ body{background:repeating-linear-gradient(90deg,rgba(214,170,60,.07) 0 22px,tran
 .page[data-page=services] .hero-panel .art{display:none}
 .page[data-page=services] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:100px;transform:rotate(15deg)}
 .page[data-page=method] .hero-panel{position:relative}
-.page[data-page=method] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:90px}
+.page[data-page=method] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:78px;transform:rotate(15deg);filter:drop-shadow(3px 4px 0 rgba(67,8,16,.18))}
 /* method */
 .hero-panel .art.rcart{display:grid;place-items:center;min-height:380px}.rcart .rc{width:300px;--rr:4deg}
 .split.chapter.whyfull{grid-template-columns:1fr}.whyfull .panel{min-height:0;align-items:center;text-align:center;padding:96px 56px}.whyfull .head{justify-content:center}.whyfull .copy{max-width:780px;margin:auto;justify-items:center}.whyfull .copy h2{max-width:16ch;margin:auto}.whyfull .copy p{max-width:62ch;margin:auto}
@@ -714,13 +715,15 @@ main.wrap,footer{overflow-x:clip}
 @media(max-width:900px){
   .hero-panel{min-height:0}
 
-  /* about: drop the photo stack on mobile, text takes the full width */
+  /* about: drop the photo stack on mobile, show a single framed headshot instead */
   .ahero{grid-template-columns:1fr;padding:22px 20px;min-height:0}
   .polas{display:none}
+  .acopy{background:var(--paper);border:2px solid var(--line);border-radius:var(--r);padding:26px 22px;gap:10px}
+  .acopy-photo{display:block;width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--line);margin-bottom:2px}
   .acopy h1{font-size:30px}
   .acopy h1 br{display:none}
   .acopy p{font-size:16px}
-  .acopy .pill{height:40px;padding:0 18px;font-size:12px}
+  .acopy .pill{height:40px;padding:0 18px;font-size:12px;margin-top:6px}
 
   /* stories: drop the decorative icon cluster on mobile, text takes the full width */
   .page[data-page=stories] .hero-panel{grid-template-columns:1fr}
