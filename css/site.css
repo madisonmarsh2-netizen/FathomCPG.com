@@ -493,6 +493,9 @@ a.row:hover .arr{transform:translateX(8px)}
   .foot-top,.foot-cols{grid-template-columns:1fr 1fr}
   .row{grid-template-columns:40px 1fr auto}
   .row .desc{grid-column:2/4}
+  .row:has(.rowstk){grid-template-columns:40px 48px 1fr auto}
+  .row:has(.rowstk) .arr{grid-column:4;grid-row:1}
+  .row:has(.rowstk) .desc{grid-column:1/-1;grid-row:2}
   .formside{position:static}
 }
 @media(max-width:640px){
