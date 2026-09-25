@@ -189,6 +189,7 @@ section{margin-bottom:28px}
 
 /* HAND-DRAWN STICKERS */
 .stk{display:block;width:140px;aspect-ratio:1;overflow:visible;filter:drop-shadow(3px 4px 0 rgba(67,8,16,.18))}
+.corner-stk{display:none}
 .stk .cut{fill:var(--butter)}
 .stk .ink{fill:none;stroke:var(--wine);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}
 .stk .fillink{fill:var(--wine);stroke:none}
@@ -709,13 +710,21 @@ main.wrap,footer{overflow-x:clip}
   .page[data-page=stories] .hero-panel .art{display:none}
 
   /* services: drop the decorative receipt art on mobile, text takes the full width */
-  .page[data-page=services] .hero-panel{grid-template-columns:1fr}
+  .page[data-page=services] .hero-panel{grid-template-columns:1fr;position:relative}
   .page[data-page=services] .hero-panel .art{display:none}
+  .page[data-page=services] .hero-panel .corner-stk{display:block;position:absolute;top:20px;right:20px;width:72px}
+
+  /* services "What I believe" cards: let the paragraph run the full card width */
+  .bgrid>div>div{display:contents}
+  .bgrid p{grid-column:1/-1}
 
   /* partner: shrink the illustration and tighten spacing on mobile */
-  .page[data-page=partner] .hero-panel{gap:16px}
+  .page[data-page=partner] .hero-panel{gap:16px;padding:24px 20px}
+  .page[data-page=partner] .hero-panel .txt{gap:14px}
+  .page[data-page=partner] .hero-panel h1{font-size:34px}
+  .page[data-page=partner] .hero-panel p{font-size:17px;line-height:1.55}
   .page[data-page=partner] .hero-panel .art.datart{padding:0;min-height:0}
-  .page[data-page=partner] .hero-panel .espresso{width:min(55%,200px);margin:0 auto}
+  .page[data-page=partner] .hero-panel .espresso{width:min(90%,340px);margin:0 auto}
 
   /* method: drop the receipt callout on mobile, text takes the full width */
   .page[data-page=method] .hero-panel{grid-template-columns:1fr}
