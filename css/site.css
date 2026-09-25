@@ -802,6 +802,7 @@ main.wrap,footer{overflow-x:clip}
   /* home "Hello, I'm Madison" text column: match the hero section's page margins above it
      (that section has no extra horizontal section padding beyond the page gutter) */
   .page[data-page=home] .statement{padding-left:0;padding-right:0}
+  .page[data-page=home] .statement-inner{padding:0 12px}
   .statement h2{font-size:22px;line-height:1.4;max-width:none}
   .statement p{font-size:16px;line-height:1.6;max-width:none;text-align:left}
   .statement .statement-accent{font-size:17.5px;padding-left:16px;border-left-width:2.5px;max-width:none}
