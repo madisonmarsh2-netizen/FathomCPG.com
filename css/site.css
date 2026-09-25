@@ -559,7 +559,10 @@ body{background:repeating-linear-gradient(90deg,rgba(214,170,60,.07) 0 22px,tran
 .bgrid h3{font-size:28px;line-height:1.05;margin-bottom:8px}.bgrid p{font-size:17px}
 .split2{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;padding:56px 64px;min-height:380px}
 .split2 h2{margin-bottom:16px}.split2 p{font-size:18.5px;max-width:48ch;margin-bottom:22px}
-.photo-tile{width:min(100%,380px);border:10px solid var(--tomato);box-shadow:6px 8px 0 rgba(67,8,16,.18);transform:rotate(-2deg);margin:auto}.photo-tile img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.photo-tile{width:min(100%,380px);border:10px solid var(--tomato);border-radius:16px;box-shadow:6px 8px 0 rgba(67,8,16,.18);transform:rotate(-2deg);margin:auto;overflow:hidden}.photo-tile img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px}
+.page[data-page=services] .hero-panel{grid-template-columns:1fr;position:relative}
+.page[data-page=services] .hero-panel .art{display:none}
+.page[data-page=services] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:100px;transform:rotate(15deg)}
 /* method */
 .hero-panel .art.rcart{display:grid;place-items:center;min-height:380px}.rcart .rc{width:300px;--rr:4deg}
 .split.chapter.whyfull{grid-template-columns:1fr}.whyfull .panel{min-height:0;align-items:center;text-align:center;padding:96px 56px}.whyfull .head{justify-content:center}.whyfull .copy{max-width:780px;margin:auto;justify-items:center}.whyfull .copy h2{max-width:16ch;margin:auto}.whyfull .copy p{max-width:62ch;margin:auto}
@@ -618,8 +621,16 @@ main.wrap,footer{overflow-x:clip}
   .ftable .rowlab{font-size:12px;line-height:1.25}
   .ftable .val{font-size:10.5px;line-height:1.3}.ftable .val.me{font-size:11.5px;line-height:1.3}
   .ck,.nx{width:22px;height:22px;font-size:9px}
-  .foot-top,.foot-cols{grid-template-columns:1fr}
-  .foot{padding:44px 20px 28px}
+  .foot-top{grid-template-columns:1fr}
+  .foot{padding:36px 20px 22px;gap:20px}
+  .foot-top{gap:12px}
+  .foot .logo{max-width:170px}
+  .foot-top .line{font-size:19px}
+  .foot-cols{grid-template-columns:1fr 1fr;gap:24px 16px;padding-top:20px}
+  .foot-cols h4{font-size:17px;margin-bottom:6px}
+  .foot-cols a,.foot-cols span{font-size:12px;padding:3px 0}
+  .foot-cols .dim{font-size:13px}
+  .foot-cols a.pill{height:42px;padding:0 16px;font-size:11.5px;margin-bottom:10px}
   .datart{min-height:0}
   .checker{padding:14px}
   .intro h2,.statement h2{font-size:26px}
@@ -710,9 +721,7 @@ main.wrap,footer{overflow-x:clip}
   .page[data-page=stories] .hero-panel .art{display:none}
 
   /* services: drop the decorative receipt art on mobile, text takes the full width */
-  .page[data-page=services] .hero-panel{grid-template-columns:1fr;position:relative}
-  .page[data-page=services] .hero-panel .art{display:none}
-  .page[data-page=services] .hero-panel .corner-stk{display:block;position:absolute;top:20px;right:20px;width:72px}
+  .page[data-page=services] .hero-panel .corner-stk{width:72px}
 
   /* services "What I believe" cards: let the paragraph run the full card width */
   .bgrid>div>div{display:contents}
