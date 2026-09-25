@@ -574,14 +574,9 @@ body{background:repeating-linear-gradient(90deg,rgba(214,170,60,.07) 0 22px,tran
 .split2{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;padding:56px 64px;min-height:380px}
 .split2 h2{margin-bottom:16px}.split2 p{font-size:18.5px;max-width:48ch;margin-bottom:22px}
 .photo-tile{width:min(100%,380px);border:10px solid var(--tomato);border-radius:16px;box-shadow:0 0 0 1.5px var(--line),6px 8px 0 rgba(67,8,16,.18);transform:rotate(-2deg);margin:auto;overflow:hidden}.photo-tile img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px}
-.page[data-page=services] .hero-panel{grid-template-columns:1fr;position:relative}
-.page[data-page=services] .hero-panel .art{display:none}
-.page[data-page=services] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:100px;transform:rotate(15deg)}
+.page[data-page=services] .hero-panel{position:relative}
 .page[data-page=method] .hero-panel{position:relative}
-.page[data-page=method] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:100px;transform:rotate(15deg);filter:drop-shadow(4px 5px 0 rgba(67,8,16,.3))}
-.page[data-page=stories] .hero-panel{grid-template-columns:1fr;position:relative}
-.page[data-page=stories] .hero-panel .art{display:none}
-.page[data-page=stories] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:100px;transform:rotate(15deg)}
+.page[data-page=stories] .hero-panel{position:relative}
 /* method */
 .hero-panel .art.rcart{display:grid;place-items:center;min-height:380px}.rcart .rc{width:300px;--rr:4deg}
 .split.chapter.whyfull{grid-template-columns:1fr}.whyfull .panel{min-height:0;align-items:center;text-align:center;padding:96px 56px}.whyfull .head{justify-content:center}.whyfull .copy{max-width:780px;margin:auto;justify-items:center}.whyfull .copy h2{max-width:16ch;margin:auto}.whyfull .copy p{max-width:62ch;margin:auto}
@@ -740,8 +735,14 @@ main.wrap,footer{overflow-x:clip}
   .acopy p{font-size:16px}
   .acopy .pill{height:40px;padding:0 18px;font-size:12px;margin-top:6px}
 
-  /* services/method/stories: drop the decorative hero art on mobile, text takes the full width */
-  .page[data-page=services] .hero-panel .corner-stk,.page[data-page=method] .hero-panel .corner-stk,.page[data-page=stories] .hero-panel .corner-stk{width:72px}
+  /* services/method/stories: drop the decorative hero art on mobile, show the small corner icon instead (desktop keeps the full art) */
+  .page[data-page=services] .hero-panel{grid-template-columns:1fr}
+  .page[data-page=services] .hero-panel .art{display:none}
+  .page[data-page=services] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:72px;transform:rotate(15deg)}
+  .page[data-page=stories] .hero-panel{grid-template-columns:1fr}
+  .page[data-page=stories] .hero-panel .art{display:none}
+  .page[data-page=stories] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:72px;transform:rotate(15deg)}
+  .page[data-page=method] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:72px;transform:rotate(15deg);filter:drop-shadow(4px 5px 0 rgba(67,8,16,.3))}
 
   /* services "What I believe" cards: let the paragraph run the full card width */
   .bgrid>div>div{display:contents}
