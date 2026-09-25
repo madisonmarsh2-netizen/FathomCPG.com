@@ -256,7 +256,14 @@ section{margin-bottom:28px}
 .statement{padding:56px 24px;text-align:center;display:grid;justify-items:center;gap:28px}
 .statement h2{font-size:clamp(28px,3.2vw,52px);line-height:1.1;max-width:960px}
 .statement p{max-width:960px;font-size:20px}
-.statement .statement-accent{display:block;width:100%;box-sizing:border-box;text-align:left;max-width:960px;font-style:italic;color:var(--wine);font-size:23px;line-height:1.4;border-left:3px solid var(--tomato);padding:2px 0 2px 22px;margin:0}
+.statement .statement-accent{font-style:italic;color:var(--wine);font-size:23px;line-height:1.4;border-left:3px solid var(--tomato);padding:2px 0 2px 22px;margin:0}
+
+/* home "Hello, I'm Madison" block: one shared wrapper so the headline, pull-quote and
+   paragraph all share the same width and left edge instead of each having its own max-width */
+.statement-inner{max-width:880px;margin:0 auto;display:grid;gap:28px;text-align:left}
+.statement-inner>.label,.statement-inner>.pill{justify-self:start}
+.statement-inner h2{max-width:none;text-wrap:balance}
+.statement-inner p{max-width:none;text-wrap:pretty}
 
 /* SECTION HEADS */
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;padding:0 8px 26px}
