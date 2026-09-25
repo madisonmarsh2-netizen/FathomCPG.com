@@ -104,10 +104,11 @@ section{margin-bottom:28px}
 .split .actions{display:flex;gap:12px;flex-wrap:wrap}
 
 /* PATTERN SECTIONS */
-.gingham{border-radius:var(--r);background:var(--gingham-olive);color:var(--wine);padding:72px 48px;position:relative}
-.gingham .inner{position:relative;max-width:1100px;margin:auto;display:grid;gap:28px;justify-items:center;text-align:center;background:var(--paper);border-radius:calc(var(--r) - 6px);padding:56px 48px}
+.gingham{border-radius:var(--r);color:var(--wine);position:relative}
+.gingham .inner{position:relative;max-width:1100px;margin:auto;display:grid;gap:20px;justify-items:center;text-align:center;background:var(--paper);border:2px solid var(--line);border-radius:var(--r);padding:56px 48px}
 .gingham h2{font-size:clamp(38px,4.4vw,70px);line-height:1}
-.gingham h2.mission{font-size:clamp(26px,2.9vw,46px);max-width:30ch;line-height:1.25}
+.gingham h2.mission{font-size:clamp(26px,2.9vw,46px);max-width:30ch;line-height:1.35}
+.gingham .mission-sub{font-size:19px;line-height:1.5;max-width:48ch;font-weight:400}
 .checker{border-radius:var(--r);padding:18px;position:relative;background:var(--butter);overflow:hidden}
 .checker::before{content:"";position:absolute;inset:0;background:
  repeating-linear-gradient(90deg,var(--tomato) 0 18px,var(--butter) 18px 36px) top/100% 18px no-repeat,
@@ -646,8 +647,7 @@ main.wrap,footer{overflow-x:clip}
   .formpanel{padding:24px 18px}
   .formside{position:static}
   .hero-logo{max-width:230px}
-  .gingham{padding:40px 18px}.gingham .inner{padding:36px 20px}.gingham h2.mission{font-size:22px;max-width:none}
-  .gingham .corner,.gingham>.stk{display:none}
+  .gingham .inner{padding:32px 22px}.gingham h2.mission{font-size:22px;max-width:none}
 }
 
 /* ===== hero fits the screen ===== */
