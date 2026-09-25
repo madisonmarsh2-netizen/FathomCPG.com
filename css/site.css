@@ -255,8 +255,8 @@ section{margin-bottom:28px}
 /* CENTERED STATEMENT */
 .statement{padding:56px 24px;text-align:center;display:grid;justify-items:center;gap:28px}
 .statement h2{font-size:clamp(28px,3.2vw,52px);line-height:1.1;max-width:920px}
-.statement h2 em{font-style:italic;color:var(--blue)}
 .statement p{max-width:960px;font-size:20px}
+.statement .statement-accent{display:block;text-align:left;max-width:760px;font-style:italic;color:var(--wine);font-size:23px;line-height:1.4;border-left:3px solid var(--tomato);padding:2px 0 2px 22px;margin:0}
 
 /* SECTION HEADS */
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;padding:0 8px 26px}
@@ -514,8 +514,8 @@ a.row:hover .arr{transform:translateX(8px)}
   .vcard{grid-template-columns:1fr;padding:28px}
   .vcard .tile{width:110px}
   .timeline .cols,.foot-top,.foot-cols{grid-template-columns:1fr}
-  .timeline .cols{gap:0}
-  .timeline .cols>div{padding-top:26px;border-top:1.5px solid var(--line)}
+  .timeline .cols{gap:30px 0}
+  .timeline .cols>div{padding-top:28px;border-top:1.5px solid var(--line)}
   .timeline .cols>div:first-child{padding-top:0;border-top:0}
   .timeline .cols h3 small{font-size:34px;margin-bottom:6px}
   .timeline .cols h3{font-size:23px;margin-bottom:8px}
@@ -533,8 +533,11 @@ a.row:hover .arr{transform:translateX(8px)}
 
 .gingham>.stk{z-index:2}.gingham .inner{z-index:1}
 body{background:repeating-linear-gradient(90deg,rgba(214,170,60,.07) 0 22px,transparent 22px 44px),repeating-linear-gradient(0deg,rgba(214,170,60,.07) 0 22px,transparent 22px 44px),var(--paper)}
-.logo.hero-logo{display:block;width:100%;max-width:680px;color:var(--butter);margin:4px 0 6px}.page[data-page=home] .split.wide .panel.olive{min-width:0}.page[data-page=home] .split.wide .panel.olive .head{width:100%;min-width:0}
-.lbl-stk{display:block;filter:drop-shadow(4px 6px 0 rgba(67,8,16,.22));pointer-events:none;z-index:3}.page[data-page=home] .split.wide .panel.olive .head{display:grid;grid-template-columns:minmax(0,1fr);justify-items:start;gap:6px}
+.logo.hero-logo{display:block;width:100%;max-width:680px;color:var(--butter);margin:4px 0 6px;transform-origin:50% 100%;animation:logo-stamp .9s cubic-bezier(.34,1.56,.64,1) both,logo-wiggle 4.5s ease-in-out .9s infinite}.page[data-page=home] .split.wide .panel.olive{min-width:0}.page[data-page=home] .split.wide .panel.olive .head{width:100%;min-width:0}
+.lbl-stk{display:block;pointer-events:none;z-index:3}.page[data-page=home] .split.wide .panel.olive .head{display:grid;grid-template-columns:minmax(0,1fr);justify-items:start;gap:6px}
+@keyframes logo-stamp{0%{transform:scale(.3) rotate(-14deg);opacity:0}50%{transform:scale(1.15) rotate(4deg);opacity:1}70%{transform:scale(.93) rotate(-3deg)}85%{transform:scale(1.04) rotate(1.5deg)}100%{transform:scale(1) rotate(0deg)}}
+@keyframes logo-wiggle{0%,100%{transform:rotate(0deg)}50%{transform:rotate(-2deg)}}
+@media(prefers-reduced-motion:reduce){.logo.hero-logo{animation:none}}
 .striped{background:var(--butter)}
 .split .panel.gingham-panel{background:var(--olive);padding:0;color:var(--butter)}.gingham-panel .inner{border:0;border-radius:var(--r);background:var(--olive);padding:48px}
 .cta.pattern-cta{background:var(--butter)}.cta.pattern-cta .ctacard{border:0}
@@ -782,6 +785,7 @@ main.wrap,footer{overflow-x:clip}
   .statement{padding:40px 22px;text-align:left;justify-items:start;gap:14px}
   .statement h2{font-size:22px;line-height:1.4;max-width:none}
   .statement p{font-size:16px;line-height:1.6;max-width:none;text-align:left}
+  .statement .statement-accent{font-size:17.5px;padding-left:16px;border-left-width:2.5px;max-width:none}
 
   /* method "why" statement blends into the page background on mobile; give it its own card */
   .page[data-page=method] .statement{background:var(--olive);color:var(--butter);border-radius:var(--r);padding:32px 24px}
