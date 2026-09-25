@@ -563,6 +563,8 @@ body{background:repeating-linear-gradient(90deg,rgba(214,170,60,.07) 0 22px,tran
 .page[data-page=services] .hero-panel{grid-template-columns:1fr;position:relative}
 .page[data-page=services] .hero-panel .art{display:none}
 .page[data-page=services] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:100px;transform:rotate(15deg)}
+.page[data-page=method] .hero-panel{position:relative}
+.page[data-page=method] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:90px}
 /* method */
 .hero-panel .art.rcart{display:grid;place-items:center;min-height:380px}.rcart .rc{width:300px;--rr:4deg}
 .split.chapter.whyfull{grid-template-columns:1fr}.whyfull .panel{min-height:0;align-items:center;text-align:center;padding:96px 56px}.whyfull .head{justify-content:center}.whyfull .copy{max-width:780px;margin:auto;justify-items:center}.whyfull .copy h2{max-width:16ch;margin:auto}.whyfull .copy p{max-width:62ch;margin:auto}
@@ -608,6 +610,9 @@ main.wrap,footer{overflow-x:clip}
   .top .right .pill.tomato .arr{display:none}
   .panel{padding:28px 22px}
   .split .panel,.split .photo{min-height:0}
+  .split .panel{gap:18px}
+  .page[data-page=home] .split.wide .panel.olive .def{font-size:16px;margin-bottom:6px}
+  .page[data-page=home] .split.wide .panel.photo{max-height:340px}
   .hero-panel{padding:28px 22px}
   .ahero{padding:10px 4px}
   .polas{justify-items:center}
@@ -639,7 +644,7 @@ main.wrap,footer{overflow-x:clip}
   .formwrap{padding:10px}
   .formpanel{padding:24px 18px}
   .formside{position:static}
-  .hero-logo{max-width:100%}
+  .hero-logo{max-width:230px}
   .gingham{padding:40px 18px}.gingham .inner{padding:36px 20px}.gingham h2.mission{font-size:22px;max-width:none}
   .gingham .corner,.gingham>.stk{display:none}
 }
