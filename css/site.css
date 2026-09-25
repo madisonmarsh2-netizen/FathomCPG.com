@@ -748,5 +748,5 @@ main.wrap,footer{overflow-x:clip}
   .statement p{font-size:16px;line-height:1.6;max-width:none;text-align:left}
 
   /* method "why" statement blends into the page background on mobile; give it its own card */
-  .page[data-page=method] .statement{background:var(--blue);color:var(--wine);border-radius:var(--r);padding:32px 24px}
+  .page[data-page=method] .statement{background:var(--olive);color:var(--butter);border-radius:var(--r);padding:32px 24px}
 }
