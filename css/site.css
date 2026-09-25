@@ -638,6 +638,9 @@ main.wrap,footer{overflow-x:clip}
   .page[data-page=home] .split.wide .panel.photo .lbl-stk{width:min(240px,34%)!important}
   .page[data-page=home] .split.wide .panel.photo>img:first-child{position:absolute;inset:0;height:100%}
 }
+@media(max-width:1100px){
+  .page[data-page=home] .split.wide .panel.photo .lbl-stk{width:min(150px,32%)!important;right:16px!important;bottom:16px!important}
+}
 
 /* ===== phone round 2 ===== */
 .stk,.mcta>.stk,.striped>.stk,.gingham>.stk,.cta>.stk{z-index:4}
