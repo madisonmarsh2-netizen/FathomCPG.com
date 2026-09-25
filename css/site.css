@@ -249,6 +249,7 @@ section{margin-bottom:28px}
 
 /* CENTERED STATEMENT */
 .statement{padding:56px 24px;text-align:center;display:grid;justify-items:center;gap:28px}
+.page[data-page=method] .statement .label{color:var(--tomato)}
 .statement h2{font-size:clamp(28px,3.2vw,52px);line-height:1.1;max-width:920px}
 .statement h2 em{font-style:italic;color:var(--blue)}
 .statement p{max-width:960px;font-size:20px}
