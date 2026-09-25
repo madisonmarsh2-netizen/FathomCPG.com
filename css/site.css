@@ -578,10 +578,10 @@ body{background:repeating-linear-gradient(90deg,rgba(214,170,60,.07) 0 22px,tran
 .page[data-page=services] .hero-panel .art{display:none}
 .page[data-page=services] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:100px;transform:rotate(15deg)}
 .page[data-page=method] .hero-panel{position:relative}
-.page[data-page=method] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:62px;transform:rotate(15deg);filter:drop-shadow(4px 5px 0 rgba(67,8,16,.3))}
+.page[data-page=method] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:100px;transform:rotate(15deg);filter:drop-shadow(4px 5px 0 rgba(67,8,16,.3))}
 .page[data-page=stories] .hero-panel{grid-template-columns:1fr;position:relative}
 .page[data-page=stories] .hero-panel .art{display:none}
-.page[data-page=stories] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:81px;transform:rotate(15deg)}
+.page[data-page=stories] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:100px;transform:rotate(15deg)}
 /* method */
 .hero-panel .art.rcart{display:grid;place-items:center;min-height:380px}.rcart .rc{width:300px;--rr:4deg}
 .split.chapter.whyfull{grid-template-columns:1fr}.whyfull .panel{min-height:0;align-items:center;text-align:center;padding:96px 56px}.whyfull .head{justify-content:center}.whyfull .copy{max-width:780px;margin:auto;justify-items:center}.whyfull .copy h2{max-width:16ch;margin:auto}.whyfull .copy p{max-width:62ch;margin:auto}
@@ -740,8 +740,8 @@ main.wrap,footer{overflow-x:clip}
   .acopy p{font-size:16px}
   .acopy .pill{height:40px;padding:0 18px;font-size:12px;margin-top:6px}
 
-  /* services: drop the decorative receipt art on mobile, text takes the full width */
-  .page[data-page=services] .hero-panel .corner-stk{width:72px}
+  /* services/method/stories: drop the decorative hero art on mobile, text takes the full width */
+  .page[data-page=services] .hero-panel .corner-stk,.page[data-page=method] .hero-panel .corner-stk,.page[data-page=stories] .hero-panel .corner-stk{width:72px}
 
   /* services "What I believe" cards: let the paragraph run the full card width */
   .bgrid>div>div{display:contents}
