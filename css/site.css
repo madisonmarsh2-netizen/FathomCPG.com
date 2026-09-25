@@ -688,3 +688,57 @@ main.wrap,footer{overflow-x:clip}
   .fit-br{display:inline}
   .fit-heading{width:max-content;max-width:920px}
 }
+
+/* ===== mobile hero reformat: small art beside/below text instead of stacked full-width ===== */
+@media(max-width:900px){
+  .hero-panel{min-height:0}
+
+  /* about: photo stack shrinks and sits beside the heading instead of above it */
+  .ahero{grid-template-columns:1fr 100px;gap:16px;align-items:start;padding:22px 20px;min-height:0}
+  .polas{order:2;justify-items:center;padding-top:4px}
+  .acopy{order:1;min-width:0;gap:14px}
+  .acopy h1{font-size:32px}
+  .acopy p{font-size:16px}
+  .pola{width:80px;padding:5px 5px 8px}
+  .pola+.pola{margin-left:-30px!important;margin-top:-58px!important}
+  .tape{display:none}
+
+  /* stories: decorative icon cluster shrinks into a small column beside the heading */
+  .page[data-page=stories] .hero-panel{grid-template-columns:1fr 108px;gap:16px;align-items:start}
+  .page[data-page=stories] .hero-panel .txt{align-content:start;gap:14px}
+  .page[data-page=stories] .hero-panel .art{position:static;min-height:0;width:108px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;justify-content:center;align-self:start;padding-top:4px}
+  .page[data-page=stories] .hero-panel .art .stk{position:static;width:46px!important;height:46px!important}
+
+  /* services: drop the decorative receipt art on mobile, text takes the full width */
+  .page[data-page=services] .hero-panel{grid-template-columns:1fr}
+  .page[data-page=services] .hero-panel .art{display:none}
+
+  /* method: receipt callout shrinks and sits right-aligned below the body copy */
+  .page[data-page=method] .hero-panel .art.rcart{display:block;min-height:0;padding:12px 0 0}
+  .page[data-page=method] .hero-panel .art.rcart .rc{width:168px;margin:0 0 0 auto;padding:16px 14px 14px;font-size:10px;--rr:3deg}
+  .page[data-page=method] .hero-panel .art.rcart .rc .rbig{font-size:15px;line-height:1.15;margin-bottom:8px}
+  .page[data-page=method] .hero-panel .art.rcart .rc .logo{width:70px;margin:6px auto 4px}
+  .page[data-page=method] .hero-panel .art.rcart .rc .bar{height:16px!important;margin:8px 0 4px}
+}
+
+/* ===== mobile: shrink the home receipt and tighten the CTA card ===== */
+@media(max-width:640px){
+  .panel.receiptbg{min-height:0;padding:24px 20px}
+  .rcpt{width:min(100%,240px);padding:16px 14px 18px;font-size:10px}
+  .rcpt .rtop{font-size:16px}
+  .rcpt .rtop small{font-size:8.5px;margin-top:4px}
+  .rcpt .rmeta{font-size:8.5px;padding:5px 0;margin:6px 0}
+  .rcpt td{padding:2px 0}
+  .rcpt .rsub,.rcpt .rtot{padding:4px 0}
+  .rcpt .rtot{font-size:11px}
+  .rcpt .rbar{height:18px;margin:8px 0 4px}
+  .rcpt .rthx{font-size:7.5px}
+
+  .cta{padding:48px 20px}
+  .cta h2{font-size:clamp(28px,9vw,40px)}
+  .cta p{font-size:16px}
+  .cta.pattern-cta{padding:48px 20px}
+  .cta.pattern-cta .ctacard{padding:30px 24px;gap:12px}
+  .mcta{padding:48px 20px}
+  .mcta .ctacard{padding:30px 24px;gap:12px}
+}
