@@ -128,7 +128,7 @@ section{margin-bottom:28px}
 .checker,.ticket-cta{border-radius:var(--r);position:relative;overflow:hidden}
 .ticket-stripe{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
 .ticket-stripe rect{x:9px;y:9px;width:calc(100% - 18px);height:calc(100% - 18px);rx:calc(var(--r) - 9px);fill:none;stroke:var(--tomato);stroke-width:18px;stroke-dasharray:18 18}
-.ticket-cta>.ctacard{position:relative;z-index:1}
+.ticket-cta>*{position:relative;z-index:1}
 
 /* BRAND PATTERNS */
 .pat-brick{background:var(--pat-brick) 0 0/56px 200px}
