@@ -699,8 +699,10 @@ main.wrap,footer{overflow-x:clip}
   /* about: drop the photo stack on mobile, text takes the full width */
   .ahero{grid-template-columns:1fr;padding:22px 20px;min-height:0}
   .polas{display:none}
-  .acopy h1{font-size:32px}
+  .acopy h1{font-size:30px}
+  .acopy h1 br{display:none}
   .acopy p{font-size:16px}
+  .acopy .pill{height:40px;padding:0 18px;font-size:12px}
 
   /* stories: drop the decorative icon cluster on mobile, text takes the full width */
   .page[data-page=stories] .hero-panel{grid-template-columns:1fr}
@@ -709,6 +711,11 @@ main.wrap,footer{overflow-x:clip}
   /* services: drop the decorative receipt art on mobile, text takes the full width */
   .page[data-page=services] .hero-panel{grid-template-columns:1fr}
   .page[data-page=services] .hero-panel .art{display:none}
+
+  /* partner: shrink the illustration and tighten spacing on mobile */
+  .page[data-page=partner] .hero-panel{gap:16px}
+  .page[data-page=partner] .hero-panel .art.datart{padding:0;min-height:0}
+  .page[data-page=partner] .hero-panel .espresso{width:min(55%,200px);margin:0 auto}
 
   /* method: drop the receipt callout on mobile, text takes the full width */
   .page[data-page=method] .hero-panel{grid-template-columns:1fr}
@@ -739,4 +746,7 @@ main.wrap,footer{overflow-x:clip}
   .statement{padding:40px 22px;text-align:left;justify-items:start;gap:14px}
   .statement h2{font-size:22px;line-height:1.4;max-width:none}
   .statement p{font-size:16px;line-height:1.6;max-width:none;text-align:left}
+
+  /* method "why" statement blends into the page background on mobile; give it its own card */
+  .page[data-page=method] .statement{background:var(--blue);color:var(--wine);border-radius:var(--r);padding:32px 24px}
 }
