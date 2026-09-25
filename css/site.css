@@ -541,7 +541,7 @@ body{background:repeating-linear-gradient(90deg,rgba(214,170,60,.07) 0 22px,tran
 .split .panel.gingham-panel{background:var(--olive);padding:0;color:var(--butter)}.gingham-panel .inner{border:0;border-radius:var(--r);background:var(--olive);padding:48px}
 .cta.pattern-cta{background:var(--butter)}.cta.pattern-cta .ctacard{border:0}
 /* about hero (polaroids) */
-.ahero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:30px 60px 30px 90px;min-height:560px;position:relative}
+.ahero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:30px 60px 30px 90px;min-height:560px;position:relative;background:var(--cream)}
 .polas{position:relative;display:grid;justify-items:start}
 .pola{position:relative;background:#FBF8EE;padding:12px 12px 18px;width:min(100%,330px);box-shadow:6px 8px 0 rgba(67,8,16,.16);transform:rotate(var(--rr,0))}
 .pola img{display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:top;filter:grayscale(1)}
@@ -733,7 +733,7 @@ main.wrap,footer{overflow-x:clip}
   /* about: drop the photo stack on mobile, show a single framed headshot instead */
   .ahero{grid-template-columns:1fr;padding:16px 0;min-height:0}
   .polas{display:none}
-  .acopy{background:var(--paper);border:2px solid var(--line);border-radius:var(--r);padding:26px 22px;gap:10px}
+  .acopy{background:var(--cream);border:2px solid var(--line);border-radius:var(--r);padding:26px 22px;gap:10px}
   .acopy-photo{display:block;width:101px;height:101px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--line);margin-bottom:2px;justify-self:end}
   .acopy h1{font-size:30px}
   .acopy h1 br{display:none}
