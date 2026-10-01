@@ -1,5 +1,15 @@
-// Fathom CPG — header, mobile menu, partner form, testimonial slider.
+// Fathom CPG — header, mobile menu, partner form, testimonial slider, cookie notice.
 (function(){
+  (function cookieNotice(){
+    var KEY='fathom-cookie-notice-seen';
+    try{if(localStorage.getItem(KEY))return}catch(e){}
+    var el=document.createElement('div');
+    el.className='cookie-notice';
+    el.innerHTML='<p>This site uses cookies and similar technology, including analytics, to understand how visitors use it. See our <a href="/privacy/">Privacy Policy</a> for details.</p><button type="button" class="pill tomato">Got it</button>';
+    document.body.appendChild(el);
+    el.querySelector('button').addEventListener('click',function(){try{localStorage.setItem(KEY,'1')}catch(e){}el.remove()});
+  })();
+
   if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle("lit",e.isIntersecting)})},{rootMargin:"-40% 0px -40% 0px"});document.querySelectorAll(".zig li").forEach(function(l){io.observe(l)})}
   var nav=document.getElementById('nav'),burger=document.getElementById('burger');
   var top=document.querySelector('header.top');
