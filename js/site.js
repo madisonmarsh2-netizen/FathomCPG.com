@@ -91,17 +91,48 @@
   show(0);
   }
 
-  document.querySelectorAll('form.news-form').forEach(function(f){
+  var NEWS_KEY='fathom-newsletter-popup',POPUP_AFTER=60; // seconds of visible time on the site before the popup
+  function newsDone(){try{localStorage.setItem(NEWS_KEY,'done')}catch(e){}}
+  function bindNews(f,onOk){
     var msg=f.querySelector('.news-msg'),btn=f.querySelector('button');
     f.addEventListener('submit',function(e){
       e.preventDefault();
       btn.disabled=true;msg.textContent='';
       fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
-        .then(function(r){if(!r.ok)throw 0;f.reset();f.classList.add('done');msg.textContent='✓ You’re subscribed. Thanks for joining!';})
+        .then(function(r){if(!r.ok)throw 0;f.reset();f.classList.add('done');msg.textContent='✓ You’re subscribed. Thanks for joining!';newsDone();if(onOk)onOk()})
         .catch(function(){msg.textContent='Something went wrong. Please try again or email madison@fathomcpg.com.'})
         .then(function(){btn.disabled=false});
     });
-  });
+  }
+  document.querySelectorAll('form.news-form').forEach(function(f){bindNews(f)});
+
+  (function newsletterPopup(){
+    if(document.getElementById('intake'))return;
+    var KEY='fathom-time-on-site',secs=0;
+    try{if(localStorage.getItem(NEWS_KEY))return;secs=+localStorage.getItem(KEY)||0}catch(e){return}
+    function open(){
+      if(document.querySelector('.cookie-notice'))return false;
+      var prev=document.activeElement;
+      var el=document.createElement('div');
+      el.className='news-pop';el.setAttribute('role','dialog');el.setAttribute('aria-modal','true');el.setAttribute('aria-labelledby','newsPopTitle');
+      el.innerHTML='<div class="news-pop-card"><button type="button" class="news-pop-x" aria-label="Close">×</button><h4 id="newsPopTitle">Get the newsletter</h4><p>Retail data takes and real CPG stories, straight from me.</p><form name="newsletter" method="POST" action="/" class="news-form"><input type="hidden" name="form-name" value="newsletter"><p style="display:none"><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p><input type="email" name="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required><button type="submit" class="pill tomato">Subscribe</button><p class="news-consent">By subscribing you agree to receive emails from Fathom CPG.</p><p class="news-msg" role="status" aria-live="polite"></p></form></div>';
+      document.body.appendChild(el);
+      function close(){newsDone();el.remove();document.removeEventListener('keydown',key);if(prev&&prev.focus)prev.focus()}
+      function key(e){if(e.key==='Escape')close()}
+      document.addEventListener('keydown',key);
+      el.addEventListener('click',function(e){if(e.target===el)close()});
+      el.querySelector('.news-pop-x').addEventListener('click',close);
+      bindNews(el.querySelector('form'),function(){setTimeout(function(){if(el.parentNode)close()},2500)});
+      el.querySelector('input[type=email]').focus();
+      return true;
+    }
+    var tick=setInterval(function(){
+      if(document.hidden)return;
+      secs++;
+      if(secs%5===0){try{localStorage.setItem(KEY,secs)}catch(e){}}
+      if(secs>=POPUP_AFTER&&open())clearInterval(tick);
+    },1000);
+  })();
 
   var t=document.getElementById('testi');
   if(t){var sl=[].slice.call(t.querySelectorAll('.slide')),ci=0;
