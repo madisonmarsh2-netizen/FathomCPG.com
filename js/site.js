@@ -91,6 +91,18 @@
   show(0);
   }
 
+  document.querySelectorAll('form.news-form').forEach(function(f){
+    var msg=f.querySelector('.news-msg'),btn=f.querySelector('button');
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      btn.disabled=true;msg.textContent='';
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
+        .then(function(r){if(!r.ok)throw 0;f.reset();msg.textContent='You’re in. Thanks for subscribing!'})
+        .catch(function(){msg.textContent='Something went wrong. Please try again or email madison@fathomcpg.com.'})
+        .then(function(){btn.disabled=false});
+    });
+  });
+
   var t=document.getElementById('testi');
   if(t){var sl=[].slice.call(t.querySelectorAll('.slide')),ci=0;
     t.querySelectorAll('.nav button').forEach(function(b){b.addEventListener('click',function(){sl[ci].classList.remove('on');ci=(ci+(+b.dataset.t)+sl.length)%sl.length;sl[ci].classList.add('on')})})}
