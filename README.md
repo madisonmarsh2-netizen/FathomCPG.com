@@ -32,6 +32,9 @@ Use `&amp;` for `&`, and keep curly quotes (’ “ ”) as they are.
 The Partner With Me form is a Netlify Form named `partner-intake`. Submissions show up in the Netlify dashboard
 under **Forms**, and are emailed to whichever address is set under Forms → Form notifications.
 
+The footer newsletter signup is a second Netlify Form named `newsletter` (email only). To move subscribers to Substack:
+Netlify → Forms → `newsletter` → **Export CSV**, then Substack → Subscribers → **Import** and upload the CSV (it needs an `email` column).
+
 ## Adding a page
 
 Copy `about/index.html` to `newpage/index.html`, change the `<title>`, description and the content block, and add a link

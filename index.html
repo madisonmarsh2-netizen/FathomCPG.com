@@ -143,9 +143,12 @@
   </div>
   <div class="foot-news">
     <div><h4>Get the newsletter</h4><p>Retail data takes and real CPG stories, straight from me.</p></div>
-    <form action="https://madisonmarsh1.substack.com/api/v1/free" method="post" target="_blank">
-      <input type="email" name="email" placeholder="you@email.com" required>
+    <form name="newsletter" method="POST" action="/" data-netlify="true" netlify-honeypot="company" class="news-form">
+      <input type="hidden" name="form-name" value="newsletter">
+      <p style="display:none"><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p>
+      <input type="email" name="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required>
       <button type="submit" class="pill tomato">Subscribe</button>
+      <p class="news-msg" role="status" aria-live="polite"></p>
     </form>
   </div>
   <div class="foot-cols">
