@@ -97,7 +97,7 @@
       e.preventDefault();
       btn.disabled=true;msg.textContent='';
       fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
-        .then(function(r){if(!r.ok)throw 0;f.reset();msg.textContent='You’re in. Thanks for subscribing!'})
+        .then(function(r){if(!r.ok)throw 0;f.reset();f.classList.add('done');msg.textContent='✓ You’re subscribed. Thanks for joining!';})
         .catch(function(){msg.textContent='Something went wrong. Please try again or email madison@fathomcpg.com.'})
         .then(function(){btn.disabled=false});
     });
