@@ -406,6 +406,8 @@ a.row:hover .arr{transform:translateX(8px)}
 .foot-news input[type=email]{font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:2px solid var(--butter);border-radius:999px;padding:12px 20px;min-width:240px}
 .foot-news .news-consent{flex-basis:100%;margin:0;font-size:13px;opacity:.7;max-width:none}
 .foot-news .news-msg{flex-basis:100%;font-size:15px;min-height:1.2em}
+.foot-news form.done>input,.foot-news form.done>button,.foot-news form.done>.news-consent{display:none}
+.foot-news form.done .news-msg{font-size:22px;color:var(--butter);opacity:1;font-weight:700}
 .foot-news input[type=email]:focus{outline:none;border-color:var(--tomato)}
 .foot-news input[type=email]::placeholder{color:rgba(43,27,23,.45)}
 .foot-cols{display:grid;grid-template-columns:1fr 1fr 1fr 1.2fr;gap:30px;border-top:1.5px solid rgba(242,232,147,.45);padding-top:34px}
