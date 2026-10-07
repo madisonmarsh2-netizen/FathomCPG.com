@@ -423,13 +423,15 @@ a.row:hover .arr{transform:translateX(8px)}
 .foot-news form.done .news-msg{font-size:22px;color:var(--butter);opacity:1;font-weight:700}
 .foot-news input[type=email]:focus{outline:none;border-color:var(--tomato)}
 .foot-news input[type=email]::placeholder{color:rgba(43,27,23,.45)}
-.foot-cols{display:grid;grid-template-columns:1fr 1fr 1fr 1.2fr;gap:30px;border-top:1.5px solid rgba(242,232,147,.45);padding-top:34px}
+.foot-cols{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:30px;border-top:1.5px solid rgba(242,232,147,.45);padding-top:34px}
 .foot-cols h4{font-size:24px;margin-bottom:14px}
 .foot-cols a,.foot-cols span{display:block;font-weight:700;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;padding:5px 0}
 .foot-cols .dim{text-transform:none;letter-spacing:.01em;font-weight:400;font-size:16px;opacity:.75}
-.foot-cols a.pill{display:inline-flex;padding:0 24px;height:50px;font-size:13.5px;letter-spacing:.12em;margin-bottom:18px;border-color:var(--butter);color:var(--butter)}
+.foot-cols a.pill{display:inline-flex;padding:0 20px;height:42px;font-size:12.5px;letter-spacing:.1em;margin-bottom:18px;border-color:var(--butter);color:var(--butter)}
 .foot-cols .pill:hover{background:var(--butter);color:var(--wine)}
-.foot-cols a.mail{text-transform:none;letter-spacing:.01em;font-weight:400;font-size:16px;padding-top:10px}
+.foot-cols a.mail{text-transform:none;letter-spacing:.01em;font-weight:400;font-size:16px;padding:0}
+.foot-cols h4+a.pill{margin-bottom:12px}
+.foot-cols .sub{margin-top:14px;padding:0 0 4px;opacity:.7;font-size:12px}
 .foot-legal{display:flex;flex-wrap:wrap;gap:6px 28px;border-top:1.5px solid rgba(242,232,147,.45);padding-top:22px;margin-top:-20px}
 .foot-legal a{font-size:13px;letter-spacing:.04em;font-weight:500;opacity:.8;text-decoration:underline;text-underline-offset:3px}
 .foot-legal a:hover{opacity:1}
@@ -689,11 +691,14 @@ main.wrap,footer{overflow-x:clip}
   .foot-news form{width:100%}
   .foot-news input[type=email]{flex:1;min-width:0}
   .foot-cols{grid-template-columns:1fr 1fr;gap:24px 16px;padding-top:20px}
+  .foot-cols>div:last-child{grid-column:1/-1}
   .foot-cols h4{font-size:17px;margin-bottom:6px}
   .foot-cols a,.foot-cols span{font-size:12px;padding:3px 0}
   .foot-cols .dim{font-size:13px}
   .foot-cols a.pill{height:42px;padding:0 16px;font-size:11.5px;margin-bottom:10px}
-  .foot-cols a.mail{font-size:13px;padding-top:6px}
+  .foot-cols a.mail{font-size:13px;padding:0}
+  .foot-cols h4+a.pill{margin-bottom:6px}
+  .foot-cols .sub{margin-top:10px;font-size:11px}
   .foot-legal{margin-top:-6px;padding-top:16px;gap:4px 20px}
   .datart{min-height:0}
   .checker{padding:14px}
