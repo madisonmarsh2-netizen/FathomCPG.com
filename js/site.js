@@ -75,8 +75,16 @@
   }
   prog.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();show(+a.dataset.step)})});
   back.addEventListener('click',function(){if(cur>0)show(cur-1)});
+  var problem=document.getElementById('problem'),problemErr=document.getElementById('problemErr'),timelineErr=document.getElementById('timelineErr');
+  function okProblem(){if(problem.value.trim()){problemErr.classList.remove('on');return true}problemErr.classList.add('on');return false}
+  function okTimeline(){if(form.querySelector('input[name="timeline"]:checked')){timelineErr.classList.remove('on');return true}timelineErr.classList.add('on');return false}
+  problem.addEventListener('input',function(){if(problem.value.trim())problemErr.classList.remove('on')});
+  [].slice.call(form.querySelectorAll('input[name="timeline"]')).forEach(function(r){r.addEventListener('change',function(){timelineErr.classList.remove('on')})});
   next.addEventListener('click',function(){
+    if(cur===3&&!okProblem()){problem.focus();return}
     if(cur<steps.length-1){show(cur+1);return}
+    if(!okTimeline())return;
+    if(!okProblem()){show(3);okProblem();problem.focus();return}
     var email=document.getElementById('email'),err=document.getElementById('emailErr');
     if(!email.value||!/.+@.+\..+/.test(email.value)){err.classList.add('on');email.focus();return}
     err.classList.remove('on');
