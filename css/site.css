@@ -429,6 +429,10 @@ a.row:hover .arr{transform:translateX(8px)}
 .foot-cols .dim{text-transform:none;letter-spacing:.01em;font-weight:400;font-size:16px;opacity:.75}
 .foot-cols a.pill{display:inline-flex;padding:0 24px;height:50px;font-size:13.5px;letter-spacing:.12em;margin-bottom:18px;border-color:var(--butter);color:var(--butter)}
 .foot-cols .pill:hover{background:var(--butter);color:var(--wine)}
+.foot-cols a.mail{text-transform:none;letter-spacing:.01em;font-weight:400;font-size:16px;padding-top:10px}
+.foot-legal{display:flex;flex-wrap:wrap;gap:6px 28px;border-top:1.5px solid rgba(242,232,147,.45);padding-top:22px;margin-top:-20px}
+.foot-legal a{font-size:13px;letter-spacing:.04em;font-weight:500;opacity:.8;text-decoration:underline;text-underline-offset:3px}
+.foot-legal a:hover{opacity:1}
 
 /* PRICING */
 .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--g)}
@@ -689,6 +693,8 @@ main.wrap,footer{overflow-x:clip}
   .foot-cols a,.foot-cols span{font-size:12px;padding:3px 0}
   .foot-cols .dim{font-size:13px}
   .foot-cols a.pill{height:42px;padding:0 16px;font-size:11.5px;margin-bottom:10px}
+  .foot-cols a.mail{font-size:13px;padding-top:6px}
+  .foot-legal{margin-top:-6px;padding-top:16px;gap:4px 20px}
   .datart{min-height:0}
   .checker{padding:14px}
   .intro h2,.statement h2{font-size:26px}
