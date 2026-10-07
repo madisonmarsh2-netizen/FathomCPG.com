@@ -423,7 +423,7 @@ a.row:hover .arr{transform:translateX(8px)}
 .foot-news form.done .news-msg{font-size:22px;color:var(--butter);opacity:1;font-weight:700}
 .foot-news input[type=email]:focus{outline:none;border-color:var(--tomato)}
 .foot-news input[type=email]::placeholder{color:rgba(43,27,23,.45)}
-.foot-cols{display:grid;grid-template-columns:1fr 1fr 1fr 1.2fr;gap:30px;border-top:1.5px solid rgba(242,232,147,.45);padding-top:34px}
+.foot-cols{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:30px;border-top:1.5px solid rgba(242,232,147,.45);padding-top:34px}
 .foot-cols h4{font-size:24px;margin-bottom:14px}
 .foot-cols a,.foot-cols span{display:block;font-weight:700;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;padding:5px 0}
 .foot-cols .dim{text-transform:none;letter-spacing:.01em;font-weight:400;font-size:16px;opacity:.75}
@@ -690,6 +690,7 @@ main.wrap,footer{overflow-x:clip}
   .foot-news form{width:100%}
   .foot-news input[type=email]{flex:1;min-width:0}
   .foot-cols{grid-template-columns:1fr 1fr;gap:24px 16px;padding-top:20px}
+  .foot-cols>div:last-child{grid-column:1/-1}
   .foot-cols h4{font-size:17px;margin-bottom:6px}
   .foot-cols a,.foot-cols span{font-size:12px;padding:3px 0}
   .foot-cols .dim{font-size:13px}
