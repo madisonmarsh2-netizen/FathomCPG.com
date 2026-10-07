@@ -24,3 +24,10 @@
     # Enforced. To debug a new third-party script, temporarily switch back to
     # Content-Security-Policy-Report-Only and check the browser console.
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://www.google.com/measurement/conversion https://www.googletagmanager.com; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
+
+# Send the netlify.app address to the real domain so the site isn't served twice.
+[[redirects]]
+  from = "https://fathom-cpg.netlify.app/*"
+  to = "https://fathomcpg.com/:splat"
+  status = 301
+  force = true
