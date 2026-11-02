@@ -873,7 +873,9 @@ main.wrap,footer{overflow-x:clip}
 .clients{border-radius:var(--r);background:var(--paper);color:var(--wine);padding:56px 40px 44px;text-align:center;display:grid;justify-items:center;gap:28px}
 .clients h2{font-size:clamp(30px,3.4vw,52px);line-height:1;max-width:18ch}
 .clients .logos{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:16px;width:100%}
-.clients .logos li{flex:0 1 340px;aspect-ratio:4/3;display:grid;place-items:center;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:18px}
-.clients .logos img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
-.clients .note{font-family:var(--narrow);font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.7}
+.clients .logos li{flex:0 1 340px;background:#fff;border:1.5px solid var(--line);border-radius:14px}
+.clients .logos a{display:grid;justify-items:center;gap:14px;padding:18px 18px 16px;color:var(--wine);text-decoration:none;height:100%}
+.clients .logos img{display:block;max-width:100%;width:auto;height:auto;max-height:240px;object-fit:contain}
+.clients .logos .name{font-family:var(--pn);font-weight:700;font-size:22px;line-height:1}
+.clients .logos a:hover .name,.clients .logos a:focus-visible .name{text-decoration:underline;text-underline-offset:4px}
 @media(max-width:640px){.clients{padding:40px 20px 32px}.clients .logos li{flex-basis:100%}}
