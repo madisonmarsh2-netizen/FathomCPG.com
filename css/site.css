@@ -870,9 +870,12 @@ main.wrap,footer{overflow-x:clip}
 }
 
 /* stories: client logo wall. One <li> per brand; wraps and centers at any count. Logos are shown unaltered, only with written permission. */
-.clients{text-align:left;border-radius:var(--r);background:var(--paper);color:var(--wine);padding:72px 64px;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.clients{text-align:left;border-radius:var(--r);background:var(--paper);color:var(--wine);padding:72px 64px;display:grid;gap:56px}
+.clients-head{display:grid;gap:20px;justify-items:start}
+.clients-head h2{font-size:clamp(34px,3.8vw,58px);line-height:.98;max-width:22ch}
+.client-row{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.client-row.alt{grid-template-columns:1fr 1.05fr}.client-row.alt .client-card{order:-1}
 .clients-copy{display:grid;gap:20px;justify-items:start}
-.clients-copy h2{font-size:clamp(34px,3.8vw,58px);line-height:.98;max-width:14ch}
 .clients-copy>p{font-size:19px;max-width:40ch;margin:0;color:var(--ink)}
 .client-spec{margin:4px 0 0;width:100%;max-width:440px;border-top:1.5px dashed var(--wine)}
 .client-spec div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1.5px dashed var(--wine);font-family:var(--narrow);font-size:14px;letter-spacing:.1em;text-transform:uppercase}
@@ -880,8 +883,9 @@ main.wrap,footer{overflow-x:clip}
 .client-link{font-family:var(--pn);font-weight:700;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--wine);text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
 .client-link:hover{color:var(--tomato)}
 .client-card{position:relative;justify-self:center;display:block;width:min(100%,420px);background:#fff;border:2px solid var(--line);border-radius:var(--r);padding:36px 32px;box-shadow:6px 8px 0 rgba(67,8,16,.16);transform:rotate(2deg);transition:transform .25s}
-.client-card:hover,.client-card:focus-visible{transform:rotate(0deg) translateY(-4px)}
+a.client-card:hover,a.client-card:focus-visible{transform:rotate(0deg) translateY(-4px)}
 .client-card img{display:block;width:100%;height:auto}
+.client-card.art{padding:0;transform:rotate(-2deg);background:#C62828}.client-card.art img{border-radius:calc(var(--r) - 2px)}
 .client-card .tape{left:50%;top:-14px;margin-left:-55px;transform:rotate(-4deg)}
-@media(max-width:860px){.clients{grid-template-columns:1fr;padding:44px 22px 40px;gap:36px}.client-card{order:-1;width:min(100%,320px);padding:26px 24px}.clients-copy h2{max-width:none}.client-spec div{font-size:13px;letter-spacing:.06em}}
+@media(max-width:860px){.clients{padding:44px 22px 40px;gap:48px}.client-row,.client-row.alt{grid-template-columns:1fr;gap:36px}.client-card,.client-row.alt .client-card{order:-1;width:min(100%,320px);padding:26px 24px}.client-card.art{padding:0}.clients-head h2{max-width:none}.client-spec div{font-size:13px;letter-spacing:.06em}}
 @media(prefers-reduced-motion:reduce){.client-card{transition:none}}
