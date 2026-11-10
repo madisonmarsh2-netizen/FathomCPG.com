@@ -890,3 +890,4 @@ a.client-card:hover,a.client-card:focus-visible{transform:rotate(0deg) translate
 @media(max-width:860px){.clients{padding:44px 22px 40px;gap:48px}.client-row,.client-row.alt{grid-template-columns:1fr;gap:36px}.client-card,.client-row.alt .client-card{order:-1;width:min(100%,320px);padding:26px 24px}.client-card.art{padding:0}.clients-head h2{max-width:none}.client-spec div{font-size:13px;letter-spacing:.06em}}
 @media(prefers-reduced-motion:reduce){.client-card{transition:none}}
 @media(max-width:360px){.client-spec div{font-size:11.5px;letter-spacing:.03em}}
+.client-card.tint{padding:0;aspect-ratio:1/1;display:grid;place-items:center;background:#EBD4E0}.client-card.tint img{width:80%;height:auto}
