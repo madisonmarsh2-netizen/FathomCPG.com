@@ -11,6 +11,7 @@ Every push to `main` goes live in about a minute.
 | About | `about/index.html` |
 | Services | `services/index.html` |
 | Clients | `clients/index.html` |
+| Category Snapshot sample work | `clients/category-snapshot/index.html` |
 | Methodology | `method/index.html` |
 | Partner With Me (the form) | `partner/index.html` |
 | Privacy Policy / Terms | `privacy/index.html`, `terms/index.html` |

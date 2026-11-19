@@ -893,3 +893,113 @@ a.client-card:hover,a.client-card:focus-visible{transform:rotate(0deg) translate
 .client-card.tint{padding:0;aspect-ratio:1/1;display:grid;place-items:center;background:#EBD4E0}.client-card.tint img{width:80%;height:auto}
 .pola.solo{width:min(100%,430px)}.pola.solo img{filter:none;object-position:center}
 .foot-cols a.social{display:inline-flex;align-items:center;justify-content:flex-start;width:auto;height:auto;padding:4px 0;color:var(--butter);transition:opacity .2s}.foot-cols a.social svg{width:24px;height:24px}.foot-cols a.social:hover,.foot-cols a.social:focus-visible{opacity:.7}
+
+/* CATEGORY SNAPSHOT: sample work page and its teaser on /clients/. Scoped to .cs-*; uses the site tokens and panels. */
+.cs-page .panel{border:2px solid var(--line)}
+.cs-page a:focus-visible,.cs-page button:focus-visible,.cs-teaser a:focus-visible{outline:2px solid var(--tomato);outline-offset:3px}
+.cs-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--g)}
+.cs-hero .panel{min-height:520px;display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.cs-crumb{font-family:var(--narrow);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.cs-crumb a{text-decoration:underline;text-underline-offset:3px}
+.cs-herotxt{display:grid;gap:22px}
+.cs-hero h1{font-size:clamp(40px,5vw,80px);line-height:.96;max-width:15ch}
+.cs-hero .sub{font-size:21px;line-height:1.35;max-width:44ch;margin:0}
+.cs-tags{display:flex;flex-wrap:wrap;gap:8px}
+.cs-tags .tag.fill{background:var(--blue);border-color:var(--blue);color:var(--wine)}
+.cs-hero .panel.olive,.cs-teaser .cs-mini{background:var(--olive);color:var(--butter)}
+.cs-hero .panel.olive .label{color:var(--butter)}
+.cs-vs{display:grid;gap:24px}
+.cs-vs .cs-row{display:grid;gap:8px}
+.cs-vs .nm{font-family:var(--narrow);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase}
+.cs-vs .cs-bar{height:68px;border-radius:12px;display:flex;align-items:center;justify-content:flex-end;padding:0 18px;font-family:var(--black);font-size:clamp(20px,2.2vw,30px);white-space:nowrap;border:2px solid var(--butter)}
+.cs-vs .cs-bar.x{width:100%;background:var(--butter);color:var(--wine)}
+.cs-vs .cs-bar.cat{width:42%;background:var(--cream);color:var(--wine);border-color:var(--cream)}
+.cs-small{margin:0;font-size:15px;line-height:1.35;opacity:.9}
+.cs-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--g)}
+.cs-stat{border:2px solid var(--line);border-radius:var(--r);background:var(--paper);padding:28px 26px;display:grid;gap:10px;align-content:start;color:var(--wine)}
+.cs-stat.hi{background:var(--butter)}
+.cs-stat .big{font-family:var(--black);font-size:clamp(34px,3.6vw,56px);line-height:1;color:var(--tomato);white-space:nowrap}
+.cs-stat.hi .big{color:var(--wine)}
+.cs-stat p{margin:0;font-size:17px;line-height:1.3;color:var(--ink)}
+.cs-sit{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.cs-sit h2{font-size:clamp(30px,3.4vw,52px);line-height:1;margin-top:14px}
+.cs-body{display:grid;gap:16px;font-size:20px}.cs-body p{margin:0}
+.cs-chap{display:grid;grid-template-columns:1fr 1.15fr;gap:var(--g)}
+.cs-chap.flip{grid-template-columns:1.15fr 1fr}
+.cs-text{display:grid;gap:18px;align-content:start}
+.cs-text p{margin:0;font-size:19px}
+.cs-text h3{font-size:clamp(28px,3vw,44px);line-height:1.02}
+.cs-num{font-family:var(--black);font-size:clamp(56px,7vw,110px);line-height:.9;color:var(--tomato)}
+.cs-quote{font-style:italic;border-left:4px solid var(--tomato);padding-left:16px}
+.cs-chart{display:grid;gap:16px;align-content:start}
+.cs-charthead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.cs-chartbox{overflow-x:auto}.cs-chartbox svg{display:block;width:100%;height:auto;min-width:520px}
+.cs-cap{margin:0;font-family:var(--narrow);font-size:14px;letter-spacing:.02em}
+.cs-card{background:var(--paper);border:2px solid var(--line);border-radius:18px;padding:18px}
+.cs-svg text{font-family:var(--narrow);fill:var(--wine)}
+.cs-svg .ax{font-size:12.5px;font-weight:600}.cs-svg .val{font-size:13px;font-weight:700}
+.cs-svg .x{font-weight:800}
+.cs-svg rect{stroke:var(--line);stroke-width:1.5}
+.cs-svg rect.x{fill:var(--tomato)}.cs-svg rect.o{fill:var(--blue)}
+.cs-svg text.x{fill:var(--wine)}
+.cs-svg .base{stroke:var(--line);stroke-width:2}
+.cs-bars-h .ax{font-size:14px}.cs-bars-h .val{font-size:14px}
+.cs-items{display:grid;gap:var(--g)}
+.cs-item{background:var(--paper);color:var(--wine);border:2px solid var(--line);border-radius:18px;padding:22px 24px;display:grid;grid-template-columns:auto 1fr 1fr;gap:12px 24px;align-items:center}
+.cs-item .nm{font-family:var(--black);font-size:22px}
+.cs-item small{display:block;font-family:var(--narrow);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-bottom:2px}
+.cs-item .st{font-family:var(--narrow);font-weight:700;font-size:28px;white-space:nowrap}
+.cs-item .pc{font-family:var(--black);font-size:34px;color:var(--tomato);white-space:nowrap}
+.cs-fewer{display:grid;gap:20px;align-content:start}.cs-fewer .label{color:var(--butter)}
+.cs-ask{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.cs-ask h2{font-size:clamp(32px,3.8vw,58px);line-height:1;margin:14px 0 18px}
+.cs-ask p{margin:0;font-size:19px;max-width:46ch}
+.cs-receipt{background:var(--butter);color:var(--wine);border:2px solid var(--line);border-radius:18px;padding:32px;box-shadow:8px 10px 0 rgba(67,8,16,.25);display:grid;gap:14px}
+.cs-receipt .big{font-family:var(--black);font-size:clamp(52px,6vw,88px);line-height:1;color:var(--wine);white-space:nowrap}
+.cs-receipt p{max-width:none}
+.cs-receipt .calc{display:grid;gap:6px;border-top:2px dashed var(--wine);padding-top:14px;font-family:var(--narrow);font-weight:600;font-size:16px}
+.cs-recs h3{font-size:clamp(28px,3vw,44px);margin-bottom:14px}
+.cs-recs ul{margin:0;padding-left:22px;display:grid;gap:8px;font-size:20px}
+.cs-cta .inner{background:var(--cream)}
+.cs-teaser{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--g);align-items:stretch}
+.cs-teaser .txt{display:grid;gap:18px;align-content:center;justify-items:start}
+.cs-teaser h2{font-size:clamp(30px,3.6vw,56px);line-height:1;max-width:15ch}
+.cs-teaser p{margin:0;max-width:46ch;font-size:19px}
+.cs-teaser .cs-mini{border-radius:18px;border:2px solid var(--line);padding:28px;display:grid;gap:18px;align-content:center}
+.cs-teaser .cs-mini .label{color:var(--butter)}
+@keyframes csUp{from{opacity:0;transform:translateY(56px)}to{opacity:1;transform:none}}
+@keyframes csGrowY{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes csGrowX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes csFade{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:no-preference){
+  .cs-hero{animation:csUp .9s cubic-bezier(.2,.7,.2,1) both}
+  @supports (animation-timeline:view()){
+    .cs-reveal{animation:csUp linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+    .cs-bars-v rect{transform-box:fill-box;transform-origin:bottom;animation:csGrowY linear both;animation-timeline:view();animation-range:entry 20% cover 45%}
+    .cs-bars-v rect.neg{transform-origin:top}
+    .cs-bars-h rect{transform-box:fill-box;transform-origin:left;animation:csGrowX linear both;animation-timeline:view();animation-range:entry 20% cover 45%}
+    .cs-bars-v text.val,.cs-bars-h text.val{animation:csFade linear both;animation-timeline:view();animation-range:entry 35% cover 50%}
+  }
+  /* Safari and Firefox: js/snapshot.js adds .cs-io and .is-visible, same keyframes on a timer */
+  .cs-io .cs-reveal{opacity:0}
+  .cs-io .cs-reveal.is-visible{animation:csUp .8s cubic-bezier(.2,.7,.2,1) both}
+  .cs-io .cs-bars-v rect,.cs-io .cs-bars-h rect{transform-box:fill-box}
+  .cs-io .cs-bars-v rect{transform-origin:bottom;transform:scaleY(0)}
+  .cs-io .cs-bars-v rect.neg{transform-origin:top}
+  .cs-io .cs-bars-h rect{transform-origin:left;transform:scaleX(0)}
+  .cs-io .cs-bars-v text.val,.cs-io .cs-bars-h text.val{opacity:0}
+  .cs-io .is-visible rect,.cs-io .cs-reveal.is-visible .cs-bars-v rect,.cs-io .cs-reveal.is-visible .cs-bars-h rect{animation-duration:.8s;animation-timing-function:cubic-bezier(.2,.7,.2,1);animation-fill-mode:both}
+  .cs-io .cs-reveal.is-visible .cs-bars-v rect{animation-name:csGrowY}
+  .cs-io .cs-reveal.is-visible .cs-bars-h rect{animation-name:csGrowX}
+  .cs-io .cs-reveal.is-visible .cs-bars-v text.val,.cs-io .cs-reveal.is-visible .cs-bars-h text.val{animation:csFade .5s ease .6s both}
+}
+@media(max-width:1100px){.cs-stats{grid-template-columns:1fr 1fr}}
+@media(max-width:820px){
+  .cs-hero,.cs-sit,.cs-chap,.cs-chap.flip,.cs-ask,.cs-teaser{grid-template-columns:1fr}
+  .cs-hero .panel{min-height:0}
+  .cs-page .panel,.cs-teaser .cs-mini{padding:28px 22px}
+  .cs-sit{gap:20px}.cs-ask{gap:28px}
+  .cs-chap .cs-chart{order:2}.cs-chap.flip .cs-chart{order:2}
+  .cs-item{grid-template-columns:1fr 1fr}.cs-item .nm{grid-column:1/-1}
+}
+@media(max-width:520px){.cs-stats{grid-template-columns:1fr}.cs-receipt{padding:24px}}
