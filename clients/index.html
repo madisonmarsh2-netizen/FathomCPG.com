@@ -16,6 +16,7 @@
 <link rel="preload" href="/fonts/PerfectlyNineties-Regular.woff" as="font" type="font/woff" crossorigin>
 <link rel="stylesheet" href="/css/site.css">
 
+<script>if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("cs-js")</script>
 </head>
 <body>
 <svg class="svgdefs" aria-hidden="true"><defs>
@@ -110,7 +111,7 @@
     </div>
   </section>
 
-  <section class="panel butter cs-teaser" aria-labelledby="cs-teaser-h">
+  <section class="panel butter cs-teaser cs-reveal" aria-labelledby="cs-teaser-h">
     <div class="txt">
       <span class="label">Sample work</span>
       <h2 id="cs-teaser-h">Brand X grew 2.4x faster than its category.</h2>
@@ -120,8 +121,8 @@
     <div class="cs-mini">
       <span class="label">Dollar growth vs. a year ago, last 26 weeks</span>
       <div class="cs-vs">
-        <div class="cs-row"><span class="nm">Brand X</span><div class="cs-bar x">+42.0%</div></div>
-        <div class="cs-row"><span class="nm">Total category</span><div class="cs-bar cat">+17.5%</div></div>
+        <div class="cs-row"><span class="nm">Brand X</span><div class="cs-bar x"><span data-count="42" data-dec="1" data-pre="+" data-suf="%">+42.0%</span></div></div>
+        <div class="cs-row"><span class="nm">Total category</span><div class="cs-bar cat"><span data-count="17.5" data-dec="1" data-pre="+" data-suf="%">+17.5%</span></div></div>
       </div>
       <p class="cs-small">Sample data.</p>
     </div>
@@ -165,5 +166,6 @@
 </main>
 
 <script src="/js/site.js"></script>
+<script src="/js/snapshot.js"></script>
 </body>
 </html>
