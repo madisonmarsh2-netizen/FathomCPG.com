@@ -10,7 +10,7 @@ Every push to `main` goes live in about a minute.
 | Home page | `index.html` |
 | About | `about/index.html` |
 | Services | `services/index.html` |
-| Success Stories | `stories/index.html` |
+| Clients | `clients/index.html` |
 | Methodology | `method/index.html` |
 | Partner With Me (the form) | `partner/index.html` |
 | Privacy Policy / Terms | `privacy/index.html`, `terms/index.html` |

@@ -630,7 +630,7 @@ body{background:repeating-linear-gradient(90deg,rgba(214,170,60,.07) 0 22px,tran
 .page[data-page=retailer-health-snapshot] .statement h1{font-size:clamp(28px,3.2vw,52px);line-height:1.1;max-width:960px}
 .page[data-page=services] .hero-panel{position:relative}
 .page[data-page=method] .hero-panel{position:relative}
-.page[data-page=stories] .hero-panel{position:relative}
+.page[data-page=clients] .hero-panel{position:relative}
 /* method */
 .hero-panel .art.rcart{display:grid;place-items:center;min-height:380px}.rcart .rc{width:300px;--rr:4deg}
 .split.chapter.whyfull{grid-template-columns:1fr}.whyfull .panel{min-height:0;align-items:center;text-align:center;padding:96px 56px}.whyfull .head{justify-content:center}.whyfull .copy{max-width:780px;margin:auto;justify-items:center}.whyfull .copy h2{max-width:16ch;margin:auto}.whyfull .copy p{max-width:62ch;margin:auto}
@@ -804,13 +804,13 @@ main.wrap,footer{overflow-x:clip}
   .acopy p{font-size:16px}
   .acopy .pill{height:40px;padding:0 18px;font-size:12px;margin-top:6px}
 
-  /* services/method/stories: drop the decorative hero art on mobile, show the small corner icon instead (desktop keeps the full art) */
+  /* services/method/clients: drop the decorative hero art on mobile, show the small corner icon instead (desktop keeps the full art) */
   .page[data-page=services] .hero-panel{grid-template-columns:1fr}
   .page[data-page=services] .hero-panel .art{display:none}
   .page[data-page=services] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:72px;transform:rotate(15deg)}
-  .page[data-page=stories] .hero-panel{grid-template-columns:1fr}
-  .page[data-page=stories] .hero-panel .art{display:none}
-  .page[data-page=stories] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:72px;transform:rotate(15deg)}
+  .page[data-page=clients] .hero-panel{grid-template-columns:1fr}
+  .page[data-page=clients] .hero-panel .art{display:none}
+  .page[data-page=clients] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:72px;transform:rotate(15deg)}
   .page[data-page=method] .hero-panel .corner-stk{display:block;position:absolute;top:28px;right:28px;width:72px;transform:rotate(15deg);filter:drop-shadow(4px 5px 0 rgba(67,8,16,.3))}
 
   /* services "What I believe" cards: let the paragraph run the full card width */
@@ -869,7 +869,7 @@ main.wrap,footer{overflow-x:clip}
   .cookie-notice p{font-size:13.5px}
 }
 
-/* stories: client logo wall. One <li> per brand; wraps and centers at any count. Logos are shown unaltered, only with written permission. */
+/* clients: client logo wall. One <li> per brand; wraps and centers at any count. Logos are shown unaltered, only with written permission. */
 .clients{text-align:left;border-radius:var(--r);background:var(--paper);color:var(--wine);padding:72px 64px;display:grid;gap:56px}
 .clients-head{display:grid;gap:20px;justify-items:start}
 .clients-head h2{font-size:clamp(34px,3.8vw,58px);line-height:.98;max-width:22ch}
