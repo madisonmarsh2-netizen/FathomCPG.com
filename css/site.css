@@ -1022,3 +1022,25 @@ html.cs-js [data-count]:not(.cs-set){visibility:hidden}
   .cs-item{grid-template-columns:1fr 1fr}.cs-item .nm{grid-column:1/-1}
 }
 @media(max-width:520px){.cs-stats{grid-template-columns:1fr}.cs-receipt{padding:24px}}
+
+/* category snapshot: phone fixes. Grid children may shrink so charts scroll inside their box instead of being clipped. */
+.cs-chart>*,.cs-card,.cs-item>*{min-width:0}
+.cs-swipe{display:none;margin:0;font-family:var(--narrow);font-weight:600;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+@media(max-width:600px){
+  .cs-swipe{display:block}
+  /* scroll shadows: a soft edge shows on whichever side has more chart to scroll to */
+  .cs-chartbox{--sh:var(--cream);background:
+    linear-gradient(to right,var(--sh),var(--sh)) left center/26px 100% no-repeat local,
+    linear-gradient(to left,var(--sh),var(--sh)) right center/26px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%,rgba(67,8,16,.3),rgba(67,8,16,0)) left center/16px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%,rgba(67,8,16,.3),rgba(67,8,16,0)) right center/16px 100% no-repeat scroll}
+  .cs-card .cs-chartbox{--sh:var(--paper)}
+  .cs-chartbox{padding-bottom:6px}
+  /* Fewer stores, more growth: stack each card so nothing runs off the panel */
+  .cs-item{grid-template-columns:1fr;gap:12px}
+  .cs-item .st,.cs-item .pc{white-space:normal}
+  .cs-item small{white-space:normal}
+  /* closing call to action: keep the text and button centered inside the border */
+  .cs-cta .inner{padding:44px 20px}
+  .cs-cta .pill{height:auto;min-height:50px;padding:14px 22px;max-width:100%;text-align:center;line-height:1.25;white-space:normal}
+}
