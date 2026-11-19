@@ -47,7 +47,7 @@
     tick();
   }
 
-  // Other numbers (stat cards, the ask) count up on a timer once they are on screen.
+  // Other numbers (stat cards, the ask) count up once their section is revealed, timed to when their card pops in.
   function countUp(el, delay) {
     var end = endOf(el), dur = 1200, t0 = null;
     function step(ts) {
@@ -58,30 +58,60 @@
     }
     setTimeout(function () { requestAnimationFrame(step); }, delay || 0);
   }
+  function startCounters(section) {
+    section.querySelectorAll('[data-count]').forEach(function (el) {
+      if (el.closest('.cs-bar')) return; // bar numbers follow their bar (trackBar)
+      var card = el.closest('.cs-stagger > *');
+      var delay = card ? 250 + 120 * Array.prototype.indexOf.call(card.parentNode.children, card) + 250
+                       : (el.closest('.cs-receipt') ? 650 : 350);
+      countUp(el, delay);
+    });
+  }
 
   // Hero bars animate on load.
   document.querySelectorAll('.cs-hero .cs-bar [data-count]').forEach(trackBar);
 
-  // Sections that scroll into view.
+  // One animation at a time, only for what the visitor is looking at.
+  // Nothing below the hero starts until they scroll; a section starts once its top is in the upper part of the screen,
+  // and if several qualify together (a fast scroll, a tall screen) they play in page order, one after another.
+  var GAP = 900;                 // ms between the start of one section's animation and the next
+  var scrolled = window.scrollY > 8;
+  var waiting = [];              // sections that are in view and waiting their turn
+  var lastStart = -Infinity, timer = null;
+
+  function reveal(el) {
+    el.classList.add('is-visible');
+    startCounters(el);
+    var bars = el.querySelectorAll('.cs-bar [data-count]');
+    if (bars.length) requestAnimationFrame(function () { bars.forEach(trackBar); });
+  }
+  function pump() {
+    timer = null;
+    if (!scrolled || !waiting.length) return;
+    var wait = lastStart + GAP - Date.now();
+    if (wait > 0) { timer = setTimeout(pump, wait); return; }
+    waiting.sort(function (a, b) { return a.getBoundingClientRect().top - b.getBoundingClientRect().top; });
+    reveal(waiting.shift());
+    lastStart = Date.now();
+    if (waiting.length) timer = setTimeout(pump, GAP);
+  }
+  function onScroll() {
+    if (scrolled) return;
+    if (window.scrollY > 8) { scrolled = true; pump(); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('wheel', function () { if (!scrolled) { scrolled = true; pump(); } }, { passive: true });
+  window.addEventListener('touchmove', function () { if (!scrolled) { scrolled = true; pump(); } }, { passive: true });
+
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      e.target.classList.add('is-visible');
+      if (!e.isIntersecting || waiting.indexOf(e.target) !== -1) return;
       io.unobserve(e.target);
-      var bars = e.target.querySelectorAll('.cs-bar [data-count]');
-      if (bars.length) requestAnimationFrame(function () { bars.forEach(trackBar); });
+      waiting.push(e.target);
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    pump();
+  }, { threshold: 0, rootMargin: '0px 0px -28% 0px' });
   reveals.forEach(function (el) { io.observe(el); });
-
-  var co = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      co.unobserve(e.target);
-      countUp(e.target, e.target.closest('.cs-receipt') ? 650 : 350);
-    });
-  }, { threshold: 0.6 });
-  counters.forEach(function (el) { if (!el.closest('.cs-bar')) co.observe(el); });
 
   // Printing: show everything and the final figures.
   window.addEventListener('beforeprint', function () {
