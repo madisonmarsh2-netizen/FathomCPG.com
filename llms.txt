@@ -9,7 +9,7 @@ Fathom CPG works with founder-led food, beverage, and consumer brands from $0 to
 - [Home](https://fathomcpg.com/): Overview of what Fathom CPG does and who it serves.
 - [About](https://fathomcpg.com/about/): Madison Marsh's background and the story behind Fathom CPG.
 - [Services](https://fathomcpg.com/services/): The four service pillars (data storytelling, data engine and dashboards, PPP analysis, market research), pricing structure, and frequently asked questions.
-- [Success Stories](https://fathomcpg.com/stories/): Client case studies (site is new; stories are added as engagements complete).
+- [Clients](https://fathomcpg.com/clients/): The brands Fathom CPG works with (Skinny Butcher, Tart, Posana). Case studies are added as engagements complete.
 - [Methodology](https://fathomcpg.com/method/): How Fathom CPG approaches an engagement, step by step.
 - [Partner With Me](https://fathomcpg.com/partner/): Intake form to start a conversation about working together.
 

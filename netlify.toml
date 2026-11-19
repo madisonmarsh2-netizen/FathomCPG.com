@@ -31,3 +31,14 @@
   to = "https://fathomcpg.com/:splat"
   status = 301
   force = true
+
+# The Stories page is now Clients; keep old links and search results working.
+[[redirects]]
+  from = "/stories"
+  to = "/clients/"
+  status = 301
+
+[[redirects]]
+  from = "/stories/*"
+  to = "/clients/:splat"
+  status = 301
